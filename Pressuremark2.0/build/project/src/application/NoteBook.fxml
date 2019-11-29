@@ -150,7 +150,7 @@
                               </GridPane>
                            </children>
                         </VBox>
-            								<Text fx:id="importWarming" fill="#eb6060" layoutX="135.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请导入CSV文件" textAlignment="CENTER" wrappingWidth="528.6025390625">
+            								<Text fx:id="importWarming" fill="#fc0808" layoutX="135.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请导入CSV文件" textAlignment="CENTER" wrappingWidth="528.6025390625">
             									<font>
             										<Font size="18.0" />
             									</font>

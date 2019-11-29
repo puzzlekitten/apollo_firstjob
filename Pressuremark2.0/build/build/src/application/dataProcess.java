@@ -508,6 +508,7 @@ public class dataProcess {
 		Map<Point, Integer> area03 = new HashMap<Point, Integer>();
 		Map<Point, Integer> area04 = new HashMap<Point, Integer>();
 		Map<Point, Integer> area05 = new HashMap<Point, Integer>();
+		maxValue=1500;
 		for (Entry<Point, Integer> entry : effectivedataMap.entrySet()) {
 			if (entry.getValue() >= maxValue * 0.8) {
 				area05.put(entry.getKey(), entry.getValue());

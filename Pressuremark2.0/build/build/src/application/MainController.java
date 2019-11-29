@@ -317,11 +317,16 @@ public class MainController implements Initializable {
 			Mapin.put("minpoints", minpoints);
 			Mapin.put("gradient", gradient);
 			Mapin.put("direction", direction.getValue());
-			dataProcess dp = new dataProcess();
-			Mapout = dp.start(Mapin);
-			pressureMin.setText((String) Mapout.get("pressureMin"));
-			if (Mapout.size() > 15) {
-				xiayibu.setText("计算成功！请点击第二步......");
+			try {
+				dataProcess dp = new dataProcess();
+				Mapout = dp.start(Mapin);
+				pressureMin.setText((String) Mapout.get("pressureMin"));
+				if (Mapout.size() > 15) {
+					xiayibu.setText("计算成功！请点击第二步......");
+					importWarming.setText(" ");
+				}
+			} catch (Exception e) {
+				importWarming.setText("请确认花纹方向！");
 			}
 		} else {
 			importWarming.setText("请先导入csv文件......");
@@ -449,7 +454,7 @@ public class MainController implements Initializable {
 
 		map26.put(7, ((String) Mapout.get("NO5")).substring(2));
 		map.put(26, map26);
-		
+
 		map8.put(6, dateFormat.format(date));
 		map.put(3, map8);
 
