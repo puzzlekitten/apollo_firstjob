@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane prefHeight="500.0" prefWidth="800.0" scaleShape="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="markImage.MainController">
+	<children>
+		<TabPane prefHeight="500.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab text="第一步:(必填)">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0">
+							<children>
+								<Label layoutX="129.0" layoutY="64.0" text="试验负荷">
+									<font>
+										<Font size="24.0" />
+									</font>
+								</Label>
+								<Label layoutX="311.0" layoutY="64.0" text="感应毯型号">
+									<font>
+										<Font size="24.0" />
+									</font>
+								</Label>
+								<Label layoutX="525.0" layoutY="64.0" text="压力边界值">
+									<font>
+										<Font size="24.0" />
+									</font>
+								</Label>
+								<Button fx:id="daoru" layoutX="234.0" layoutY="199.0" mnemonicParsing="false" onAction="#importCsv" text="导入">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Button>
+								<Button fx:id="calculate" layoutX="446.0" layoutY="199.0" mnemonicParsing="false" onAction="#calculateCsv" text="计算">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Button>
+								<Text fx:id="importWarming" fill="#dab1b1" layoutX="155.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请导入CSV文件" wrappingWidth="614.6025390625">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Text>
+								<Text fill="#f56f6f" layoutX="155.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="518.0" fx:id="xiayibu">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Text>
+								<TextField fx:id="testLoad" alignment="BOTTOM_CENTER" layoutX="120.0" layoutY="111.0" prefHeight="30.0" prefWidth="114.0" text="3550" />
+								<TextField fx:id="pressureMin" alignment="BOTTOM_CENTER" layoutX="522.0" layoutY="111.0" prefHeight="30.0" prefWidth="126.0" text="50" />
+								<ChoiceBox fx:id="danweichangdu" layoutX="296.0" layoutY="111.0" prefWidth="150.0">
+								</ChoiceBox>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="第二步:(选填)">
+					<content>
+						<GridPane alignment="BOTTOM_CENTER" hgap="10.0" vgap="10.0">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+								<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="114.0" text="规格" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="149.0" text="花纹" GridPane.columnIndex="2" GridPane.rowIndex="1">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="121.0" text="层级" GridPane.columnIndex="3" GridPane.rowIndex="1">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="142.0" text="商标" GridPane.columnIndex="4" GridPane.rowIndex="1">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="150.0" text="重量" GridPane.columnIndex="1" GridPane.rowIndex="5">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="120.0" text="执行标准" GridPane.columnIndex="1" GridPane.rowIndex="3">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="126.0" text="试验轮辋" GridPane.columnIndex="2" GridPane.rowIndex="3">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="117.0" text="试验气压" GridPane.columnIndex="3" GridPane.rowIndex="3">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="128.0" text="外直径" GridPane.columnIndex="4" GridPane.rowIndex="3">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="161.0" text="下沉量" GridPane.columnIndex="2" GridPane.rowIndex="5">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="134.0" text="负荷半径" GridPane.columnIndex="3" GridPane.rowIndex="5">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<Label alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="175.0" text="胎号" GridPane.columnIndex="4" GridPane.rowIndex="5">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Label>
+								<TextField fx:id="guige" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+								<TextField fx:id="huawen" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+								<TextField fx:id="cengji" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+								<TextField fx:id="shangbiao" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+								<TextField fx:id="biaozhun" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+								<TextField fx:id="runwang" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+								<TextField fx:id="qiya" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+								<TextField fx:id="zhijing" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+								<TextField fx:id="zhongliang" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+								<TextField alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="2" GridPane.rowIndex="6" fx:id="xiachenliang" />
+								<TextField fx:id="banjing" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+								<TextField fx:id="taihao" alignment="BOTTOM_CENTER" text="/" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+								<Button fx:id="shengcheng" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#produe" prefHeight="36.0" prefWidth="130.0" text="生成" GridPane.columnIndex="1" GridPane.rowIndex="8">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</Button>
+							</children>
+						</GridPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</children>
+</Pane>
